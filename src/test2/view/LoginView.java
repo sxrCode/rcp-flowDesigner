@@ -109,8 +109,10 @@ public class LoginView {
 		loginPanel = new Composite(loginShell, SWT.BORDER);
 		// loginPanel.setBackground(new Color(loginShell.getDisplay(), 10, 20,
 		// 30));
-		GridLayout loginPanelLayout = new GridLayout(1, false);
+		GridLayout loginPanelLayout = new GridLayout(3, false);
 		loginPanel.setLayout(loginPanelLayout);
+		loginPanelLayout.horizontalSpacing = 0;
+		loginPanelLayout.verticalSpacing = 0;
 		loginPanel.setBounds(loginShell.getBounds());
 		loginPanelBounds = loginPanel.getBounds();
 
