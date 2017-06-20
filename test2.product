@@ -98,7 +98,6 @@
       <plugin id="org.w3c.dom.smil"/>
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="test2"/>
-      <plugin id="test5"/>
    </plugins>
 
 
