@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_3KjOcEwpEeeVk__s0y0Evg">
+  <imports xsi:type="commands:Command" xmi:id="_cchIxkwtEeeVk__s0y0Evg" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
+  <imports xsi:type="commands:Command" xmi:id="_cchIx0wtEeeVk__s0y0Evg" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <imports xsi:type="commands:Command" xmi:id="_cchIyEwtEeeVk__s0y0Evg" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_B77MsEwyEeeVk__s0y0Evg" featurename="children" parentElementId="test2.menu.about1">
+    <elements xsi:type="menu:DirectMenuItem" xmi:id="_B77MsUwyEeeVk__s0y0Evg" elementId="test2.directmenuitem.f.0" label="About" contributionURI="bundleclass://test2/test2.handlers.AboutHandler"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_wDUHsE_nEeeBfYRMWyxGtA" featurename="menuContributions" parentElementId="test2.application">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_w0tvcE_nEeeBfYRMWyxGtA" elementId="test2.menucontribution.0" parentId="test2.menu.sxr.0">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_BCFV8E_oEeeBfYRMWyxGtA" elementId="www.sxr.hello" label="hello" command="_U75ZAE_oEeeBfYRMWyxGtA">
+        <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_6u3asFADEee0_MwLd8j9GA" coreExpressionId="when.hello.is.active"/>
+      </children>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Svl5gE_oEeeBfYRMWyxGtA" featurename="commands" parentElementId="test2.application">
+    <elements xsi:type="commands:Command" xmi:id="_U75ZAE_oEeeBfYRMWyxGtA" elementId="test2.command.cus.0" commandName="cuscommand"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_axHf8E_oEeeBfYRMWyxGtA" featurename="handlers" parentElementId="test2.application">
+    <elements xsi:type="commands:Handler" xmi:id="_fwxQ0E_oEeeBfYRMWyxGtA" elementId="test2.handler.0" contributionURI="bundleclass://test2/test2.handlers.Cus1Handler" command="_U75ZAE_oEeeBfYRMWyxGtA"/>
+  </fragments>
+</fragment:ModelFragments>
