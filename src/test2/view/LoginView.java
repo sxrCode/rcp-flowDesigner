@@ -109,7 +109,7 @@ public class LoginView {
 		loginPanel = new Composite(loginShell, SWT.BORDER);
 		// loginPanel.setBackground(new Color(loginShell.getDisplay(), 10, 20,
 		// 30));
-		GridLayout loginPanelLayout = new GridLayout(3, false);
+		GridLayout loginPanelLayout = new GridLayout(1, false);
 		loginPanel.setLayout(loginPanelLayout);
 		loginPanelLayout.horizontalSpacing = 0;
 		loginPanelLayout.verticalSpacing = 0;
@@ -123,50 +123,60 @@ public class LoginView {
 
 	private void createUICompositeBanner() {
 		Composite banner = new Composite(loginPanel, SWT.NONE);
-		GridData data = new GridData(SWT.FILL, SWT.NONE, false, true);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		banner.setSize(loginPanelBounds.width, (int) (loginPanelBounds.height * 0.2));
 		System.out.println("loginPanelBounds: " + loginPanelBounds.toString());
 		data.minimumHeight = (int) (loginPanelBounds.height * 0.2);
 		banner.setLayoutData(data);
-		banner.setBackground(new Color(loginShell.getDisplay(), 10, 20, 130));
+		// banner.setBackground(new Color(loginShell.getDisplay(), 10, 20,
+		// 130));
 		System.out.println("banner: " + banner.getBounds().toString());
-		// Label label = new Label(banner, SWT.CENTER);
-		// label.setText("登陆");
+
+		GridLayout gridLayout = new GridLayout(2, true);
+		banner.setLayout(gridLayout);
+
+		Label label = new Label(banner, SWT.CENTER);
+		GridData data2 = new GridData(SWT.FILL, SWT.FILL, true, true);
+		data2.horizontalSpan = 2;
+		label.setLayoutData(data2);
+		label.setText("登陆");
 	}
 
 	private void createUILoginContent() {
 		Composite content = new Composite(loginPanel, SWT.NONE);
 		content.setBackground(new Color(loginShell.getDisplay(), 10, 200, 30));
-		content.setSize(loginPanelBounds.width, (int) (loginPanelBounds.height * 0.2));
-		GridData contentLayoutData = new GridData(SWT.FILL, SWT.NONE, false, true);
-		contentLayoutData.minimumHeight = (int) (loginPanelBounds.height * 0.2);
+		content.setSize(loginPanelBounds.width, (int) (loginPanelBounds.height * 0.5));
+		GridData contentLayoutData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		contentLayoutData.minimumHeight = (int) (loginPanelBounds.height * 0.5);
 		content.setLayoutData(contentLayoutData);
 
-		GridLayout gridLayout = new GridLayout(4, false);
+		GridLayout gridLayout = new GridLayout(2, false);
 		content.setLayout(gridLayout);
 		System.out.println("content: " + content.getBounds().toString());
+
 		// createUIBlank(content, 0.1);
-		// createUILabelUserName(content, 0.4);
-		// createUITextUserName(content, 0.4);
+		createUILabelUserName(content, 0.4);
+		createUITextUserName(content, 0.4);
 		// createUIBlank(content, 0.1);
-		//
+
 		// createUIBlank(content, 0.1);
-		// createUILabelPassword(content, 0.4);
-		// createUITextPassword(content, 0.4);
+		createUILabelPassword(content, 0.4);
+		createUITextPassword(content, 0.4);
 		// createUIBlank(content, 0.1);
 
 	}
 
 	private void createUIBlank(Composite parent, double widthPre) {
 		Composite blank = new Composite(parent, SWT.NONE);
-		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
-		data.widthHint = (int) (parent.getBounds().width * widthPre);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, false, true);
+		// data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		blank.setLayoutData(data);
 	}
 
 	private void createUILabelUserName(Composite parent, double widthPre) {
 		Composite composite = new Composite(parent, SWT.NONE);
-		GridData data = new GridData((int) (parent.getBounds().width * widthPre), parent.getBounds().height);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, false, true);
+		data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		Label label = new Label(parent, SWT.CENTER);
 		label.setText("&User Name:"); //$NON-NLS-1$
 		// Configure layout data
@@ -176,14 +186,16 @@ public class LoginView {
 	private void createUITextUserName(Composite parent, double widthPre) {
 		// Create the text widget
 		Composite composite = new Composite(parent, SWT.NONE);
-		GridData data = new GridData((int) (parent.getBounds().width * widthPre), parent.getBounds().height);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, false, true);
+		data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		composite.setLayoutData(data);
 		fTextUsername = new Text(composite, SWT.BORDER | SWT.LEAD);
 	}
 
 	private void createUILabelPassword(Composite parent, double widthPre) {
 		Composite composite = new Composite(parent, SWT.NONE);
-		GridData data = new GridData((int) (parent.getBounds().width * widthPre), parent.getBounds().height);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, false, true);
+		data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		Label label = new Label(parent, SWT.CENTER);
 		label.setText("&Password:"); //$NON-NLS-1$
 		// Configure layout data
@@ -193,7 +205,8 @@ public class LoginView {
 	private void createUITextPassword(Composite parent, double widthPre) {
 		// Create the text widget
 		Composite composite = new Composite(parent, SWT.NONE);
-		GridData data = new GridData((int) (parent.getBounds().width * widthPre), parent.getBounds().height);
+		GridData data = new GridData(SWT.FILL, SWT.FILL, false, true);
+		data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		composite.setLayoutData(data);
 		fTextPassword = new Text(composite, SWT.BORDER | SWT.LEAD);
 	}
@@ -201,9 +214,10 @@ public class LoginView {
 	private void createUIButton() {
 		Composite buttonContent = new Composite(loginPanel, SWT.NONE);
 		buttonContent.setBackground(new Color(loginShell.getDisplay(), 150, 20, 40));
-		buttonContent.setSize(loginPanelBounds.width, (int) (loginPanelBounds.height * 0.5));
-		GridData gridData = new GridData(SWT.FILL, SWT.NONE, true, false);
-		gridData.minimumHeight = (int) (loginPanelBounds.height * 0.5);
+		// buttonContent.setSize(loginPanelBounds.width, (int)
+		// (loginPanelBounds.height * 0.5));
+		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		gridData.minimumHeight = (int) (loginPanelBounds.height * 0.2);
 		buttonContent.setLayoutData(gridData);
 
 		GridLayout gridLayout = new GridLayout(2, true);
