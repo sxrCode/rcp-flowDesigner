@@ -10,7 +10,6 @@ public class Main {
 		Shell shell = new Shell(display);
 
 		new GridLayoutSample(shell).create();
-		// shell.pack();
 		shell.open();
 		while (!shell.isDisposed()) {
 			if (!display.readAndDispatch()) {
