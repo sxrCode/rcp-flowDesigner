@@ -71,6 +71,7 @@ public class SamplePart {
 		Shell shell = new Shell(display, SWT.BORDER | SWT.APPLICATION_MODAL);
 		LoginView loginView = new LoginView(shell);
 		loginView.open();
+		sysShell.setMaximized(true);
 	}
 
 	@Persist
