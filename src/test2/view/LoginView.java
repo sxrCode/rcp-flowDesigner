@@ -28,7 +28,6 @@ public class LoginView {
 	private Text fTextUsername;
 	private Text fTextPassword;
 	private Composite buttonLogin;
-	// private Button fButtonCancel;
 	private Composite buttonCancel;
 
 	private boolean fAuthenticated = false;
@@ -273,12 +272,7 @@ public class LoginView {
 	}
 
 	private void createUIButtonOK(Composite parent) {
-		buttonLogin = new Composite(parent, SWT.NONE);
-		GridData data = new GridData(GridData.CENTER, GridData.CENTER, true, true);
-		data.widthHint = (int) (parent.getBounds().width * 0.326);
-		data.heightHint = (int) (parent.getBounds().height * 0.55);
-		buttonLogin.setLayoutData(data);
-		buttonLogin.setSize((int) (parent.getBounds().width * 0.326), (int) (parent.getBounds().height * 0.55));
+		buttonLogin = buildButton(parent);
 		Image image = ImageHelper.getImage(ImageHelper.LOGIN_IMG);
 		ImageData imageData = image.getImageData().scaledTo(buttonLogin.getBounds().width,
 				buttonLogin.getBounds().height);
@@ -286,16 +280,20 @@ public class LoginView {
 	}
 
 	private void createUIButtonCancel(Composite parent) {
-		buttonCancel = new Composite(parent, SWT.NONE);
-		GridData data = new GridData(GridData.CENTER, GridData.CENTER, true, true);
-		data.widthHint = (int) (parent.getBounds().width * 0.326);
-		data.heightHint = (int) (parent.getBounds().height * 0.55);
-		buttonCancel.setLayoutData(data);
-		buttonCancel.setSize((int) (parent.getBounds().width * 0.326), (int) (parent.getBounds().height * 0.55));
-
+		buttonCancel = buildButton(parent);
 		Image image = ImageHelper.getImage(ImageHelper.CANCEL_IMG);
 		ImageData imageData = image.getImageData().scaledTo(buttonCancel.getBounds().width,
 				buttonCancel.getBounds().height);
 		buttonCancel.setBackgroundImage(new Image(loginShell.getDisplay(), imageData));
+	}
+
+	private Composite buildButton(Composite parent) {
+		Composite button = new Composite(parent, SWT.NONE);
+		GridData data = new GridData(GridData.CENTER, GridData.CENTER, true, true);
+		data.widthHint = (int) (parent.getBounds().width * 0.326);
+		data.heightHint = (int) (parent.getBounds().height * 0.55);
+		button.setLayoutData(data);
+		button.setSize((int) (parent.getBounds().width * 0.326), (int) (parent.getBounds().height * 0.55));
+		return button;
 	}
 }
