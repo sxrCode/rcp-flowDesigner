@@ -5,8 +5,6 @@ import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
@@ -16,7 +14,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
@@ -31,7 +28,8 @@ public class LoginView {
 	private Text fTextUsername;
 	private Text fTextPassword;
 	private Composite buttonLogin;
-	private Button fButtonCancel;
+	// private Button fButtonCancel;
+	private Composite buttonCancel;
 
 	private boolean fAuthenticated = false;
 
@@ -77,14 +75,16 @@ public class LoginView {
 			});
 		}
 
-		fButtonCancel.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				System.out.println("say no!");
-				loginShell.getDisplay().close();
-				System.exit(0);
-			}
-		});
+		if (buttonCancel != null) {
+			buttonCancel.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseDown(MouseEvent e) {
+					System.out.println("say no!");
+					loginShell.getDisplay().close();
+					System.exit(0);
+				}
+			});
+		}
 
 		loginShell.addDisposeListener(new DisposeListener() {
 
@@ -181,7 +181,6 @@ public class LoginView {
 	private void createUIBlank(Composite parent, double widthPre) {
 		Composite blank = new Composite(parent, SWT.NONE);
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
-		// data.minimumWidth = (int) (parent.getBounds().width * widthPre);
 		blank.setLayoutData(data);
 		blank.setBackground(new Color(loginShell.getDisplay(), 10, 100, 130));
 	}
@@ -280,8 +279,6 @@ public class LoginView {
 		data.heightHint = (int) (parent.getBounds().height * 0.55);
 		buttonLogin.setLayoutData(data);
 		buttonLogin.setSize((int) (parent.getBounds().width * 0.326), (int) (parent.getBounds().height * 0.55));
-		buttonLogin.setBackground(new Color(loginShell.getDisplay(), 173, 255, 47));
-		System.out.println("buttonok: " + buttonLogin.getBounds());
 		Image image = ImageHelper.getImage(ImageHelper.LOGIN_IMG);
 		ImageData imageData = image.getImageData().scaledTo(buttonLogin.getBounds().width,
 				buttonLogin.getBounds().height);
@@ -289,10 +286,16 @@ public class LoginView {
 	}
 
 	private void createUIButtonCancel(Composite parent) {
-		fButtonCancel = new Button(parent, SWT.PUSH | SWT.CENTER);
-		fButtonCancel.setText("取消"); //$NON-NLS-1$
+		buttonCancel = new Composite(parent, SWT.NONE);
 		GridData data = new GridData(GridData.CENTER, GridData.CENTER, true, true);
+		data.widthHint = (int) (parent.getBounds().width * 0.326);
+		data.heightHint = (int) (parent.getBounds().height * 0.55);
+		buttonCancel.setLayoutData(data);
+		buttonCancel.setSize((int) (parent.getBounds().width * 0.326), (int) (parent.getBounds().height * 0.55));
 
-		fButtonCancel.setLayoutData(data);
+		Image image = ImageHelper.getImage(ImageHelper.CANCEL_IMG);
+		ImageData imageData = image.getImageData().scaledTo(buttonCancel.getBounds().width,
+				buttonCancel.getBounds().height);
+		buttonCancel.setBackgroundImage(new Image(loginShell.getDisplay(), imageData));
 	}
 }

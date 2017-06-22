@@ -11,6 +11,7 @@ public class ImageHelper {
 	public static String BANNER = "/icons/banner.png";
 	public static String ASC_IMG = "/icons/asc_img_12.png";
 	public static String LOGIN_IMG = "/icons/login_img.png";
+	public static String CANCEL_IMG = "/icons/cancel_img.png";
 
 	public static Image getImage(String imageName) {
 		if (registry == null) {
