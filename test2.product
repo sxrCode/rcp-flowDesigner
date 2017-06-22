@@ -15,7 +15,9 @@
 
    <windowImages/>
 
-   <launcher>
+   <splash
+      location="e4splash" />
+   <launcher name="flowDesigner">
       <solaris/>
       <win useIco="false">
          <bmp/>
@@ -27,6 +29,7 @@
 
    <plugins>
       <plugin id="com.ibm.icu"/>
+      <plugin id="e4splash"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>

@@ -142,12 +142,6 @@ public class LoginView {
 		GridLayout gridLayout = new GridLayout(2, true);
 		banner.setLayout(gridLayout);
 		banner.setBackgroundImage(ImageHelper.getImage(ImageHelper.BANNER));
-
-		Label label = new Label(banner, SWT.CENTER);
-		GridData data2 = new GridData(SWT.FILL, SWT.FILL, true, true);
-		data2.horizontalSpan = 2;
-		label.setLayoutData(data2);
-		label.setText("登陆");
 	}
 
 	private void createUILoginContent() {
