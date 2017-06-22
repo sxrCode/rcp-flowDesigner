@@ -18,6 +18,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import test2.ImageHelper;
+
 public class LoginView {
 
 	private Shell loginShell;
@@ -136,6 +138,7 @@ public class LoginView {
 
 		GridLayout gridLayout = new GridLayout(2, true);
 		banner.setLayout(gridLayout);
+		banner.setBackgroundImage(ImageHelper.getImage(ImageHelper.BANNER));
 
 		Label label = new Label(banner, SWT.CENTER);
 		GridData data2 = new GridData(SWT.FILL, SWT.FILL, true, true);
