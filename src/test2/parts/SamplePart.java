@@ -67,7 +67,7 @@ public class SamplePart {
 
 	@Inject
 	public void test5(Shell sysShell, Display display) {
-		System.out.println("test5");
+		System.out.println("loginView open!");
 		Shell shell = new Shell(display, SWT.BORDER | SWT.APPLICATION_MODAL);
 		LoginView loginView = new LoginView(shell);
 		loginView.open();

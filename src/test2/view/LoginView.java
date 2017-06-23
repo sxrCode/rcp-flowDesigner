@@ -149,8 +149,6 @@ public class LoginView {
 		content.setBackground(new Color(loginShell.getDisplay(), 235, 242, 249));
 		content.setSize(loginPanelBounds.width, (int) (loginPanelBounds.height * 0.3));
 		GridData contentLayoutData = new GridData(SWT.FILL, SWT.FILL, true, true);
-		// contentLayoutData.minimumHeight = (int) (loginPanelBounds.height *
-		// 0.5);
 		contentLayoutData.verticalIndent = 0;
 		contentLayoutData.horizontalIndent = 0;
 		content.setLayoutData(contentLayoutData);
@@ -185,7 +183,7 @@ public class LoginView {
 
 		Label label = new Label(composite, SWT.CENTER);
 		label.setAlignment(SWT.CENTER);
-		label.setText("User name:"); //$NON-NLS-1$
+		label.setText("User name:");
 		RowData rowData = new RowData((int) (data.minimumWidth * 0.8), 30);
 		label.setLayoutData(rowData);
 		label.setBackground(new Color(loginShell.getDisplay(), 220, 220, 220));

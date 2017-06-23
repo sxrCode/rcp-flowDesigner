@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-
-   <extension
-         point="org.eclipse.core.runtime.products">
-      <product
-            name="test2"
-            application="org.eclipse.e4.ui.workbench.swt.E4Application">
-         <property
-               name="lifeCycleURI"
-               value="bundleclass://test2/test2.E4LifeCycle">
-         </property>
-         <property
-               name="applicationCSS"
-               value="platform:/plugin/test2/css/default.css">
-         </property>
-         <property
-               name="appName"
-               value="sxrApp">
-         </property>
-      </product>
-   </extension>
    
    <extension
          id="test2.fragment"
@@ -28,6 +8,7 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   
    <extension
          id="product"
          point="org.eclipse.core.runtime.products">
@@ -38,30 +19,15 @@
                name="appName"
                value="test2">
          </property>
+          <property
+               name="lifeCycleURI"
+               value="bundleclass://test2/test2.E4LifeCycle">
+         </property>
+          <property
+                name="applicationCSS"
+                value="platform:/plugin/test2/css/default.css">
+          </property>
       </product>
    </extension>
-
-	<extension
-	      point="org.eclipse.core.expressions.definitions">
-	      <definition
-             id="when.hello.is.active">
-             <and>
-	             <adapt
-	                   type="org.eclipse.core.resources.IResource">
-	                   <equals
-	                         value="test2.equals2">
-	                   </equals>
-	             </adapt>
-	             <with
-	                   variable="activeContext">
-	                   <iterate operator="and">
-		                   <equals
-		                         value="org.eclipse.ui.context.dialog">
-		                   </equals>
-	                   </iterate>
-	             </with>
-             </and>
-	      </definition>
-	</extension>
- 
+   
 </plugin>

@@ -92,9 +92,9 @@ public class TestView1 {
 	@Inject
 	@Optional
 	public void test6(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection) {
-		// if (selection != null) {
-		// System.out.println("test6 " + selection.toString());
-		// }
+		if (selection != null) {
+			System.out.println("test6 " + selection.toString());
+		}
 		System.out.println("test6");
 	}
 
@@ -108,6 +108,7 @@ public class TestView1 {
 	public void preDestroy() {
 		System.out.println("TestView1 preDestroy!");
 		if (job != null) {
+			System.out.println("job.cancel");
 			job.cancel();
 		}
 	}
