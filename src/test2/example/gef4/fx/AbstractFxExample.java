@@ -10,7 +10,7 @@
  *     Matthias Wienand (itemis AG) - initial API and implementation
  *
  *******************************************************************************/
-package test2.test.gef4.fx;
+package test2.example.gef4.fx;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

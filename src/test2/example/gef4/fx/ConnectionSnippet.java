@@ -11,7 +11,7 @@
  *     Alexander Nyßen (itemis AG) - adjusted example to show relevant features
  *
  *******************************************************************************/
-package test2.test.gef4.fx;
+package test2.example.gef4.fx;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
