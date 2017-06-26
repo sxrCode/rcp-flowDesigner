@@ -46,7 +46,7 @@ public abstract class AbstractZestExample extends Application {
 		return Integer.toString(id++);
 	}
 
-	protected static Edge e(org.eclipse.gef4.graph.Node n, org.eclipse.gef4.graph.Node m, Object... attr) {
+	protected static Edge e(Node n, Node m, Object... attr) {
 		String label = (String) n.attributesProperty().get(LABEL) + (String) m.attributesProperty().get(LABEL);
 		Builder builder = new Edge.Builder(n, m).attr(LABEL, label).attr(ID, genId());
 		for (int i = 0; i < attr.length; i += 2) {
@@ -55,14 +55,14 @@ public abstract class AbstractZestExample extends Application {
 		return builder.buildEdge();
 	}
 
-	protected static Edge e(Graph graph, org.eclipse.gef4.graph.Node n, org.eclipse.gef4.graph.Node m, Object... attr) {
+	protected static Edge e(Graph graph, Node n, Node m, Object... attr) {
 		Edge edge = e(n, m, attr);
 		edge.setGraph(graph);
 		graph.getEdges().add(edge);
 		return edge;
 	}
 
-	protected static org.eclipse.gef4.graph.Node n(Object... attr) {
+	protected static Node n(Object... attr) {
 		org.eclipse.gef4.graph.Node.Builder builder = new org.eclipse.gef4.graph.Node.Builder();
 		String id = genId();
 		builder.attr(ID, id).attr(LABEL, id);
@@ -72,7 +72,7 @@ public abstract class AbstractZestExample extends Application {
 		return builder.buildNode();
 	}
 
-	protected static org.eclipse.gef4.graph.Node n(Graph graph, Object... attr) {
+	protected static Node n(Graph graph, Object... attr) {
 		Node node = n(attr);
 		node.setGraph(graph);
 		graph.getNodes().add(node);
