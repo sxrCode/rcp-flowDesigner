@@ -23,7 +23,7 @@ import org.eclipse.gef4.layout.LayoutProperties;
 import org.eclipse.gef4.zest.fx.ZestProperties;
 
 import javafx.application.Application;
-import test2.example.gef4.zest.basic.AbstractZestExample;
+import test2.example.gef4.zest.AbstractZestExample;
 
 /**
  * This snippet shows how to create a custom layout. All the work is done in the

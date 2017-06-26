@@ -22,7 +22,7 @@ import org.eclipse.gef4.zest.fx.ZestProperties;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import test2.example.gef4.zest.basic.AbstractZestExample;
+import test2.example.gef4.zest.AbstractZestExample;
 
 public class FilterLayoutExample extends AbstractZestExample {
 

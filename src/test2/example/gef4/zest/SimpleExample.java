@@ -12,7 +12,7 @@
  * Note: Parts of this class have been transferred from org.eclipse.gef4.zest.examples.layout.SimpleGraphSnippet
  *
  *******************************************************************************/
-package test2.example.gef4.zest.basic;
+package test2.example.gef4.zest;
 
 import org.eclipse.gef4.graph.Edge;
 import org.eclipse.gef4.graph.Graph;

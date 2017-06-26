@@ -12,7 +12,7 @@
  * Note: Parts of this class have been transferred from org.eclipse.gef4.zest.examples.layout.CustomFigureGraphSnippet
  *
  *******************************************************************************/
-package test2.example.gef4.zest.basic;
+package test2.example.gef4.zest;
 
 import java.util.Map;
 

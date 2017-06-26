@@ -10,7 +10,7 @@
  *     Alexander Nyßen (itemis AG) - initial API & implementation
  *
  *******************************************************************************/
-package test2.example.gef4.zest.basic;
+package test2.example.gef4.zest;
 
 import java.util.Collections;
 

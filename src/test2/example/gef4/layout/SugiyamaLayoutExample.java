@@ -19,7 +19,7 @@ import org.eclipse.gef4.layout.algorithms.SugiyamaLayoutAlgorithm;
 import org.eclipse.gef4.zest.fx.ZestProperties;
 
 import javafx.application.Application;
-import test2.example.gef4.zest.basic.AbstractZestExample;
+import test2.example.gef4.zest.AbstractZestExample;
 
 public class SugiyamaLayoutExample extends AbstractZestExample {
 

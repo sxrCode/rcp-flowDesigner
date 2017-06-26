@@ -34,7 +34,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleButton;
-import test2.example.gef4.zest.basic.AbstractZestExample;
+import test2.example.gef4.zest.AbstractZestExample;
 
 public class SpringLayoutProgressExample extends AbstractZestExample {
 
