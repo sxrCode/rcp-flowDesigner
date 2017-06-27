@@ -31,6 +31,10 @@
 
 
    <plugins>
+      <plugin id="com.google.guava"/>
+      <plugin id="com.google.inject"/>
+      <plugin id="com.google.inject.assistedinject" fragment="true"/>
+      <plugin id="com.google.inject.multibindings" fragment="true"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="e4splash"/>
       <plugin id="javax.annotation"/>
@@ -41,6 +45,7 @@
       <plugin id="org.apache.batik.util.gui"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.log4j"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
       <plugin id="org.eclipse.core.databinding"/>
@@ -92,7 +97,24 @@
       <plugin id="org.eclipse.equinox.simpleconfigurator"/>
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
       <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.fx.javafx"/>
       <plugin id="org.eclipse.fx.osgi" fragment="true"/>
+      <plugin id="org.eclipse.gef4.common"/>
+      <plugin id="org.eclipse.gef4.fx"/>
+      <plugin id="org.eclipse.gef4.fx.compatibility.equinox" fragment="true"/>
+      <plugin id="org.eclipse.gef4.fx.jface"/>
+      <plugin id="org.eclipse.gef4.fx.swt"/>
+      <plugin id="org.eclipse.gef4.geometry"/>
+      <plugin id="org.eclipse.gef4.geometry.convert.fx"/>
+      <plugin id="org.eclipse.gef4.geometry.convert.swt"/>
+      <plugin id="org.eclipse.gef4.graph"/>
+      <plugin id="org.eclipse.gef4.layout"/>
+      <plugin id="org.eclipse.gef4.mvc"/>
+      <plugin id="org.eclipse.gef4.mvc.compatibility.equinox" fragment="true"/>
+      <plugin id="org.eclipse.gef4.mvc.fx"/>
+      <plugin id="org.eclipse.gef4.mvc.fx.compatibility.equinox" fragment="true"/>
+      <plugin id="org.eclipse.gef4.zest.fx"/>
+      <plugin id="org.eclipse.gef4.zest.fx.jface"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.osgi"/>
