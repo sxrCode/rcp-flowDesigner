@@ -19,8 +19,8 @@ import javafx.scene.image.Image;
 
 public class FXDeleteHoverHandlePart extends AbstractLogoHoverHandlePart<HoverOverlayImageView> {
 
-	public static final String IMG_DELETE = "/delete_obj.gif";
-	public static final String IMG_DELETE_DISABLED = "/delete_obj_disabled.gif";
+	public static final String IMG_DELETE = "delete_obj.gif";
+	public static final String IMG_DELETE_DISABLED = "delete_obj_disabled.gif";
 
 	@Override
 	protected HoverOverlayImageView createVisual() {

@@ -34,18 +34,18 @@ public class SugiyamaLayoutExample extends AbstractZestExample {
 	@Override
 	protected Graph createGraph() {
 		// create nodes
-		org.eclipse.gef4.graph.Node[] nodes = new org.eclipse.gef4.graph.Node[] { n(LABEL, "Coal"), n(LABEL, "Ore"),
-				n(LABEL, "Stone"), n(LABEL, "Metal"), n(LABEL, "Concrete"), n(LABEL, "Machine"), n(LABEL, "Building") };
+		org.eclipse.gef4.graph.Node[] nodes = new org.eclipse.gef4.graph.Node[] { makeNode(LABEL, "Coal"), makeNode(LABEL, "Ore"),
+				makeNode(LABEL, "Stone"), makeNode(LABEL, "Metal"), makeNode(LABEL, "Concrete"), makeNode(LABEL, "Machine"), makeNode(LABEL, "Building") };
 
 		// create edges
 		org.eclipse.gef4.graph.Edge[] edges = new org.eclipse.gef4.graph.Edge[] {
-				e(nodes[0], nodes[3]) /* coal -> metal */,
-				e(nodes[0], nodes[4]) /* coal -> concrete */,
-				e(nodes[3], nodes[5]) /* metal -> machine */,
-				e(nodes[3], nodes[6]) /* metal -> building */,
-				e(nodes[4], nodes[6]) /* concrete -> building */,
-				e(nodes[1], nodes[3]) /* ore -> metal */,
-				e(nodes[2], nodes[4]) /* stone -> concrete */ };
+				makeEdge(nodes[0], nodes[3]) /* coal -> metal */,
+				makeEdge(nodes[0], nodes[4]) /* coal -> concrete */,
+				makeEdge(nodes[3], nodes[5]) /* metal -> machine */,
+				makeEdge(nodes[3], nodes[6]) /* metal -> building */,
+				makeEdge(nodes[4], nodes[6]) /* concrete -> building */,
+				makeEdge(nodes[1], nodes[3]) /* ore -> metal */,
+				makeEdge(nodes[2], nodes[4]) /* stone -> concrete */ };
 
 		return new Graph.Builder().nodes(nodes).edges(edges)
 				.attr(ZestProperties.LAYOUT_ALGORITHM__G, new SugiyamaLayoutAlgorithm()).build();

@@ -60,7 +60,7 @@ public class FullyMeshedLayoutExample extends AbstractZestExample {
 			@Override
 			public void handle(ActionEvent event) {
 				// add node
-				Node newNode = n(graph, LABEL, Integer.toString(id++));
+				Node newNode = makeNode(graph, LABEL, Integer.toString(id++));
 				// connect with all other nodes
 				for (org.eclipse.gef4.graph.Node n : nodes) {
 					e(graph, n, newNode);

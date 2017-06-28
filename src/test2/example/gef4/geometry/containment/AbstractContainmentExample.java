@@ -23,8 +23,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.MouseMoveListener;
-import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Display;
@@ -32,7 +30,9 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 
-public abstract class AbstractContainmentExample implements PaintListener {
+import javafx.scene.web.WebView;
+
+public abstract class AbstractContainmentExample {
 
 	abstract public class AbstractControllableShape {
 
@@ -312,6 +312,7 @@ public abstract class AbstractContainmentExample implements PaintListener {
 		shell = new Shell(display, SWT.SHELL_TRIM | SWT.DOUBLE_BUFFERED);
 		shell.setText(title);
 		shell.setBounds(0, 0, 640, 480);
+		WebView webView = new WebView();
 		shell.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 
 		// open the shell before creating the controllable shapes so that their
@@ -321,7 +322,28 @@ public abstract class AbstractContainmentExample implements PaintListener {
 		controllableShape1 = createControllableShape1(shell);
 		controllableShape2 = createControllableShape2(shell);
 
-		shell.addPaintListener(this);
+		shell.addPaintListener(e -> {
+			e.gc.setAntialias(SWT.ON);
+
+			IGeometry cs1geometry = controllableShape1.createGeometry();
+			IGeometry cs2geometry = controllableShape2.createGeometry();
+
+			if (computeIntersects(cs1geometry, cs2geometry)) {
+				e.gc.setBackground(Display.getCurrent().getSystemColor(INTERSECTS_COLOR));
+				controllableShape2.fillShape(e.gc);
+			}
+
+			if (computeContains(cs1geometry, cs2geometry)) {
+				e.gc.setBackground(Display.getCurrent().getSystemColor(CONTAINS_COLOR));
+				controllableShape2.fillShape(e.gc);
+			}
+
+			controllableShape1.drawShape(e.gc);
+			controllableShape2.drawShape(e.gc);
+
+			controllableShape1.drawControlPoints(e.gc);
+			controllableShape2.drawControlPoints(e.gc);
+		});
 		shell.redraw(); // triggers a PaintEvent platform independently
 
 		while (!shell.isDisposed()) {
@@ -338,28 +360,4 @@ public abstract class AbstractContainmentExample implements PaintListener {
 	protected abstract AbstractControllableShape createControllableShape1(Canvas canvas);
 
 	protected abstract AbstractControllableShape createControllableShape2(Canvas canvas);
-
-	@Override
-	public void paintControl(PaintEvent e) {
-		e.gc.setAntialias(SWT.ON);
-
-		IGeometry cs1geometry = controllableShape1.createGeometry();
-		IGeometry cs2geometry = controllableShape2.createGeometry();
-
-		if (computeIntersects(cs1geometry, cs2geometry)) {
-			e.gc.setBackground(Display.getCurrent().getSystemColor(INTERSECTS_COLOR));
-			controllableShape2.fillShape(e.gc);
-		}
-
-		if (computeContains(cs1geometry, cs2geometry)) {
-			e.gc.setBackground(Display.getCurrent().getSystemColor(CONTAINS_COLOR));
-			controllableShape2.fillShape(e.gc);
-		}
-
-		controllableShape1.drawShape(e.gc);
-		controllableShape2.drawShape(e.gc);
-
-		controllableShape1.drawControlPoints(e.gc);
-		controllableShape2.drawControlPoints(e.gc);
-	}
 }

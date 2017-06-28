@@ -116,7 +116,7 @@ public class CustomNodeExample extends AbstractZestExample {
 	@Override
 	protected Graph createGraph() {
 		Graph g = new Graph();
-		e(g, n(g, LABEL, "A", ATTR_CUSTOM, true), n(g, LABEL, "B"));
+		e(g, makeNode(g, LABEL, "A", ATTR_CUSTOM, true), makeNode(g, LABEL, "B"));
 		g.attributesProperty().put(ZestProperties.LAYOUT_ALGORITHM__G, new SugiyamaLayoutAlgorithm());
 		return g;
 	}

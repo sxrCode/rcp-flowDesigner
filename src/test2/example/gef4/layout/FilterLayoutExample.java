@@ -38,14 +38,14 @@ public class FilterLayoutExample extends AbstractZestExample {
 	protected Graph createGraph() {
 		Graph graph = new Graph();
 
-		Node a = n(graph, LABEL, "Root");
-		Node b = n(graph, LABEL, "B");
-		Node c = n(graph, LABEL, "C");
-		Node d = n(graph, LABEL, "D");
-		Node e = n(graph, LABEL, "E");
-		Node f = n(graph, LABEL, "F");
-		Node g = n(graph, LABEL, "G");
-		Node h = n(graph, LABEL, "H");
+		Node a = makeNode(graph, LABEL, "Root");
+		Node b = makeNode(graph, LABEL, "B");
+		Node c = makeNode(graph, LABEL, "C");
+		Node d = makeNode(graph, LABEL, "D");
+		Node e = makeNode(graph, LABEL, "E");
+		Node f = makeNode(graph, LABEL, "F");
+		Node g = makeNode(graph, LABEL, "G");
+		Node h = makeNode(graph, LABEL, "H");
 
 		e(graph, a, b, LABEL, "", LAYOUT_IRRELEVANT, Boolean.TRUE, CSS_CLASS, "red");
 		e(graph, a, c, LABEL, "", LAYOUT_IRRELEVANT, Boolean.TRUE, CSS_CLASS, "red");

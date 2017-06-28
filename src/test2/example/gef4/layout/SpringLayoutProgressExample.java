@@ -62,24 +62,24 @@ public class SpringLayoutProgressExample extends AbstractZestExample {
 		List<Node> nodes = new ArrayList<>();
 		List<Edge> edges = new ArrayList<>();
 
-		Node root = n(LABEL, "Root");
+		Node root = makeNode(LABEL, "Root");
 		nodes.add(root);
 
-		Node aa = n(LABEL, "A");
-		Node bb = n(LABEL, "B");
-		Node cc = n(LABEL, "C");
+		Node aa = makeNode(LABEL, "A");
+		Node bb = makeNode(LABEL, "B");
+		Node cc = makeNode(LABEL, "C");
 		nodes.addAll(Arrays.asList(aa, bb, cc));
 
-		Node dd = n(LABEL, "D");
-		Node ee = n(LABEL, "E");
-		Node ff = n(LABEL, "F");
+		Node dd = makeNode(LABEL, "D");
+		Node ee = makeNode(LABEL, "E");
+		Node ff = makeNode(LABEL, "F");
 		nodes.addAll(Arrays.asList(dd, ee, ff));
 
-		edges.addAll(Arrays.asList(e(root, aa, LABEL, ""), e(root, bb, LABEL, ""), e(root, cc, LABEL, "")));
+		edges.addAll(Arrays.asList(makeEdge(root, aa, LABEL, ""), makeEdge(root, bb, LABEL, ""), makeEdge(root, cc, LABEL, "")));
 
-		edges.addAll(Arrays.asList(e(aa, bb, LABEL, ""), e(bb, cc, LABEL, ""), e(cc, aa, LABEL, ""),
-				e(aa, dd, LABEL, ""), e(bb, ee, LABEL, ""), e(cc, ff, LABEL, ""), e(cc, dd, LABEL, ""),
-				e(dd, ee, LABEL, ""), e(ee, ff, LABEL, "")));
+		edges.addAll(Arrays.asList(makeEdge(aa, bb, LABEL, ""), makeEdge(bb, cc, LABEL, ""), makeEdge(cc, aa, LABEL, ""),
+				makeEdge(aa, dd, LABEL, ""), makeEdge(bb, ee, LABEL, ""), makeEdge(cc, ff, LABEL, ""), makeEdge(cc, dd, LABEL, ""),
+				makeEdge(dd, ee, LABEL, ""), makeEdge(ee, ff, LABEL, "")));
 
 		Node[] mix = new Node[3];
 		mix[0] = aa;
@@ -88,15 +88,15 @@ public class SpringLayoutProgressExample extends AbstractZestExample {
 
 		for (int k = 0; k < 1; k++) {
 			for (int i = 0; i < 8; i++) {
-				Node n = n(LABEL, "1 - " + i);
+				Node n = makeNode(LABEL, "1 - " + i);
 				nodes.add(n);
 				for (int j = 0; j < 5; j++) {
-					Node n2 = n(LABEL, "2 - " + j);
+					Node n2 = makeNode(LABEL, "2 - " + j);
 					nodes.add(n2);
-					Edge e = e(n, n2, LABEL, "", "weight", "-1");
-					edges.addAll(Arrays.asList(e, e(mix[j % 3], n2, LABEL, "")));
+					Edge e = makeEdge(n, n2, LABEL, "", "weight", "-1");
+					edges.addAll(Arrays.asList(e, makeEdge(mix[j % 3], n2, LABEL, "")));
 				}
-				edges.add(e(root, n, LABEL, ""));
+				edges.add(makeEdge(root, n, LABEL, ""));
 			}
 		}
 

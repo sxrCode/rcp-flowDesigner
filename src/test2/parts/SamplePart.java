@@ -38,7 +38,6 @@ public class SamplePart {
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
-
 		txtInput = new Text(parent, SWT.BORDER);
 		txtInput.setMessage("Enter text to mark part as dirty");
 		txtInput.addModifyListener(new ModifyListener() {

@@ -34,9 +34,9 @@ public class SimpleExample extends AbstractZestExample {
 
 	@Override
 	protected Graph createGraph() {
-		Node n = n(LABEL, "Paper");
-		Node n2 = n(LABEL, "Rock");
-		Node n3 = n(LABEL, "Scissors");
+		Node n = makeNode(LABEL, "Paper");
+		Node n2 = makeNode(LABEL, "Rock");
+		Node n3 = makeNode(LABEL, "Scissors");
 		Edge e12 = new Edge(n, n2);
 		Edge e23 = new Edge(n2, n3);
 		Edge e31 = new Edge(n3, n);

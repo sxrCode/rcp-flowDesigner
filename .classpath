@@ -5,6 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_91"/>
 	<classpathentry kind="lib" path="lib/guava-22.0.jar"/>
 	<classpathentry kind="lib" path="E:/Program Files/Java/jdk1.8.0_91/lib/javafx-mx.jar"/>
-	<classpathentry kind="lib" path="E:/Program Files/Java/jdk1.8.0_91/jre/lib/jfxswt.jar"/>
+	<classpathentry kind="lib" path="E:/Program Files/Java/jdk1.8.0_91/jre/lib/jfxswt.jar" sourcepath="E:/Program Files/Java/jdk1.8.0_91/javafx-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

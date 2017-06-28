@@ -40,20 +40,20 @@ public class SpaceTreeLayoutExample extends AbstractZestExample {
 		List<Node> nodes = new ArrayList<>();
 		List<Edge> edges = new ArrayList<>();
 
-		Node root = n(LABEL, "Root");
+		Node root = makeNode(LABEL, "Root");
 		nodes.add(root);
 		for (int i = 0; i < 3; i++) {
-			Node n = n(LABEL, "1 - " + i);
+			Node n = makeNode(LABEL, "1 - " + i);
 			nodes.add(n);
 			for (int j = 0; j < 3; j++) {
 				// make these nodes differ via their ids (as the labels are
 				// identical)
-				Node n2 = n(ID, i + "-" + j, LABEL, "2 - " + j);
+				Node n2 = makeNode(ID, i + "-" + j, LABEL, "2 - " + j);
 				nodes.add(n2);
-				Edge e = e(n, n2);
+				Edge e = makeEdge(n, n2);
 				edges.add(e);
 			}
-			edges.add(e(root, n));
+			edges.add(makeEdge(root, n));
 		}
 		return new Graph.Builder().nodes(nodes.toArray(new Node[] {})).edges(edges.toArray(new Edge[] {}))
 				.attr(ZestProperties.LAYOUT_ALGORITHM__G,

@@ -22,7 +22,6 @@ import org.eclipse.gef4.layout.LayoutContext;
 import org.eclipse.gef4.layout.LayoutProperties;
 import org.eclipse.gef4.zest.fx.ZestProperties;
 
-import javafx.application.Application;
 import test2.example.gef4.zest.AbstractZestExample;
 
 /**
@@ -36,7 +35,7 @@ import test2.example.gef4.zest.AbstractZestExample;
 public class CustomLayoutExample extends AbstractZestExample {
 
 	public static void main(String[] args) {
-		Application.launch(args);
+		launch(args);
 	}
 
 	public CustomLayoutExample() {
@@ -46,12 +45,12 @@ public class CustomLayoutExample extends AbstractZestExample {
 	@Override
 	protected Graph createGraph() {
 		// create nodes
-		org.eclipse.gef4.graph.Node[] nodes = new org.eclipse.gef4.graph.Node[] { n(LABEL, "Paper"), n(LABEL, "Rock"),
-				n(LABEL, "Scissors"), };
+		org.eclipse.gef4.graph.Node[] nodes = new org.eclipse.gef4.graph.Node[] { makeNode(LABEL, "Paper"),
+				makeNode(LABEL, "Rock"), makeNode(LABEL, "Scissors"), };
 
 		// create edges
-		org.eclipse.gef4.graph.Edge[] edges = new org.eclipse.gef4.graph.Edge[] { e(nodes[0], nodes[1]),
-				e(nodes[1], nodes[2]) };
+		org.eclipse.gef4.graph.Edge[] edges = new org.eclipse.gef4.graph.Edge[] { makeEdge(nodes[0], nodes[1]),
+				makeEdge(nodes[1], nodes[2]) };
 
 		return new Graph.Builder().nodes(nodes).edges(edges)
 				.attr(ZestProperties.LAYOUT_ALGORITHM__G, createLayoutAlgorithm()).build();

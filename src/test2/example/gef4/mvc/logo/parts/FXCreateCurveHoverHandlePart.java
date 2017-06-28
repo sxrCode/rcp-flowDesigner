@@ -19,8 +19,8 @@ import javafx.scene.image.Image;
 
 public class FXCreateCurveHoverHandlePart extends AbstractLogoHoverHandlePart<HoverOverlayImageView> {
 
-	public static final String IMG_ADD = "/add_obj.gif";
-	public static final String IMG_ADD_DISABLED = "/add_obj_disabled.gif";
+	public static final String IMG_ADD = "add_obj.gif";
+	public static final String IMG_ADD_DISABLED = "add_obj_disabled.gif";
 
 	@Override
 	protected HoverOverlayImageView createVisual() {
