@@ -26,10 +26,11 @@ public abstract class AbstractMvcExample extends Application {
 
 	protected final String title;
 	private Stage primaryStage;
-	private FXDomain domain;
+	public FXDomain domain;
 
 	public AbstractMvcExample(String title) {
 		this.title = title;
+		this.domain = Guice.createInjector(createModule()).getInstance(FXDomain.class);
 	}
 
 	protected abstract Module createModule();
@@ -58,7 +59,8 @@ public abstract class AbstractMvcExample extends Application {
 		this.primaryStage = primaryStage;
 
 		// create domain using guice
-		this.domain = Guice.createInjector(createModule()).getInstance(FXDomain.class);
+		// this.domain =
+		// Guice.createInjector(createModule()).getInstance(FXDomain.class);
 
 		// create viewers
 		hookViewers();
@@ -73,7 +75,6 @@ public abstract class AbstractMvcExample extends Application {
 
 		// activate domain
 		domain.activate();
-
 		// load contents
 		populateViewerContents();
 	}

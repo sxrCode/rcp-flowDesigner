@@ -6,14 +6,7 @@
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="test2.partsashcontainer.sample" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="test2.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="test2.part.sample" contributionURI="bundleclass://test2/test2.parts.SamplePart" label="Sample Part"/>
-            <children xsi:type="basic:Part" xmi:id="_IqLs4EwQEeeVk__s0y0Evg" elementId="test2.part.testview1" contributionURI="bundleclass://test2/test2.parts.TestView1" label="testview1">
-              <menus xmi:id="_ILf2UFCxEeeUt7VQhvPeKg" elementId="test2.menu.test1menu" label="test1menu">
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_M4XOEFCxEeeUt7VQhvPeKg" elementId="test2.handledmenuitem.about" label="about" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
-              </menus>
-              <menus xsi:type="menu:PopupMenu" xmi:id="_Z_kU4FCxEeeUt7VQhvPeKg" elementId="test2.popupmenu.test1pop" label="test1pop">
-                <children xsi:type="menu:HandledMenuItem" xmi:id="_bcatYFCxEeeUt7VQhvPeKg" elementId="test2.handledmenuitem.about" label="about" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
-              </menus>
-            </children>
+            <children xsi:type="basic:Part" xmi:id="_1NqaIFxzEee0o7fR-QqHVQ" elementId="test2.part.FxtestPart" contributionURI="bundleclass://test2/test2.parts.FxtestPart" label="FxtestPart"/>
           </children>
         </children>
       </children>

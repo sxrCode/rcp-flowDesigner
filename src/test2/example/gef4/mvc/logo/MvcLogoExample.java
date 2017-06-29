@@ -65,4 +65,12 @@ public class MvcLogoExample extends AbstractMvcExample {
 		getPaletteViewer().getAdapter(ContentModel.class).getContents().setAll(createPaletteContents());
 	}
 
+	public Scene provideScene() {
+		Scene scene = new Scene(
+				new MvcLogoExampleViewersComposite(getContentViewer(), getPaletteViewer()).getComposite());
+		getDomain().activate();
+		populateViewerContents();
+		return scene;
+	}
+
 }
