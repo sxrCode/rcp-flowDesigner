@@ -20,7 +20,7 @@ import java.util.List;
 import org.eclipse.gef4.graph.Edge;
 import org.eclipse.gef4.graph.Graph;
 import org.eclipse.gef4.graph.Node;
-import org.eclipse.gef4.layout.algorithms.SugiyamaLayoutAlgorithm;
+import org.eclipse.gef4.layout.algorithms.TreeLayoutAlgorithm;
 import org.eclipse.gef4.zest.fx.ZestProperties;
 
 import javafx.application.Application;
@@ -58,7 +58,7 @@ public class SpringLayoutExample extends AbstractZestExample {
 			edges.add(makeEdge(root, n));
 		}
 		return new Graph.Builder().nodes(nodes.toArray(new Node[] {})).edges(edges.toArray(new Edge[] {}))
-				.attr(ZestProperties.LAYOUT_ALGORITHM__G, new SugiyamaLayoutAlgorithm()).build();
+				.attr(ZestProperties.LAYOUT_ALGORITHM__G, new TreeLayoutAlgorithm()).build();
 
 	}
 

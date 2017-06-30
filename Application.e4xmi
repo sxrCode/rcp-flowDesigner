@@ -7,6 +7,7 @@
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="test2.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="test2.part.sample" contributionURI="bundleclass://test2/test2.parts.SamplePart" label="Sample Part"/>
             <children xsi:type="basic:Part" xmi:id="_1NqaIFxzEee0o7fR-QqHVQ" elementId="test2.part.FxtestPart" contributionURI="bundleclass://test2/test2.parts.FxtestPart" label="FxtestPart"/>
+            <children xsi:type="basic:Part" xmi:id="_DpS10F07EeeaqvKCml7gZQ" elementId="test2.part.treelayout" contributionURI="bundleclass://test2/test2.parts.LayoutPart" label="treelayout"/>
           </children>
         </children>
       </children>
