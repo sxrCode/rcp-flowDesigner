@@ -69,11 +69,10 @@ public class CustomNodeExample extends AbstractZestExample {
 		@Override
 		protected void configure() {
 			super.configure();
-			bindIContentPartFactory();
 		}
 
+		@Override
 		protected void bindIContentPartFactory() {
-			System.out.println("bindIContentPartFactory!");
 			binder().bind(new TypeLiteral<IContentPartFactory<Node>>() {
 			}).toInstance(new CustomContentPartFactory());
 		}
