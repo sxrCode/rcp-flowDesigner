@@ -100,7 +100,6 @@
       <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.fx.osgi" fragment="true"/>
-      <plugin id="org.eclipse.gef4.cloudio.ui"/>
       <plugin id="org.eclipse.gef4.common"/>
       <plugin id="org.eclipse.gef4.fx"/>
       <plugin id="org.eclipse.gef4.fx.compatibility.equinox" fragment="true"/>
